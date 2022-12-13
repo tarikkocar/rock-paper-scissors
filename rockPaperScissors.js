@@ -1,5 +1,5 @@
 function getComputerChoice() {
-    let elements = ['Rock', 'Paper', 'Scissors']
+    let elements = ['🪨', '📜', '✂️']
     return elements[Math.floor(Math.random() * elements.length)];
 }
 
@@ -8,39 +8,43 @@ function playRound(e) {
     let computerSelection = getComputerChoice();
     let roundResult = document.querySelector(".result");
     let scores = document.querySelector(".scores")
-    if (playerSelection === "Rock") {
-        if (computerSelection === "Paper") {
+    let displayComputerSelection = document.querySelector(".computer-selection")
+    let displayPlayerSelection = document.querySelector(".player-selection")
+    displayComputerSelection.textContent = computerSelection
+    displayPlayerSelection.textContent = playerSelection
+    if (playerSelection === "🪨") {
+        if (computerSelection === "📜") {
             computerScore++;
             roundResult.textContent = "You lose! Paper beats Rock!";
-            scores.textContent = `Scores: You: ${playerScore} Computer: ${computerScore}`
-        } else if (computerSelection === "Scissors") {
+            scores.textContent = `You: ${playerScore} Computer: ${computerScore}`
+        } else if (computerSelection === "✂️") {
             playerScore++;
             roundResult.textContent = "You win! Rock beats Scissors!";
-            scores.textContent = `Scores: You: ${playerScore} Computer: ${computerScore}`
+            scores.textContent = `You: ${playerScore} Computer: ${computerScore}`
         } else {
             roundResult.textContent = "It's a tie! You both selected Rock!";
         }
-    } else if (playerSelection === "Paper") {
-        if (computerSelection === "Scissors") {
+    } else if (playerSelection === "📜") {
+        if (computerSelection === "✂️") {
             computerScore++;
             roundResult.textContent = "You lose! Scissors beats Paper!";
-            scores.textContent = `Scores: You: ${playerScore} Computer: ${computerScore}`
-        } else if (computerSelection === "Rock") {
+            scores.textContent = `You: ${playerScore} Computer: ${computerScore}`
+        } else if (computerSelection === "🪨") {
             playerScore++;
             roundResult.textContent = "You win! Paper beats Rock!";
-            scores.textContent = `Scores: You: ${playerScore} Computer: ${computerScore}`
+            scores.textContent = `You: ${playerScore} Computer: ${computerScore}`
         } else {
             roundResult.textContent = "It's a tie! You both selected Paper!";
         }
-    } else if (playerSelection === "Scissors") {
-        if (computerSelection === "Rock") {
+    } else if (playerSelection === "✂️") {
+        if (computerSelection === "🪨") {
             computerScore++;
             roundResult.textContent = "You lose! Rock beats Scissors!";
-            scores.textContent = `Scores: You: ${playerScore} Computer: ${computerScore}`
-        } else if (computerSelection === "Paper") {
+            scores.textContent = `You: ${playerScore} Computer: ${computerScore}`
+        } else if (computerSelection === "📜") {
             playerScore++;
             roundResult.textContent = "You win! Scissors beats Paper!";
-            scores.textContent = `Scores: You: ${playerScore} Computer: ${computerScore}`
+            scores.textContent = `You: ${playerScore} Computer: ${computerScore}`
         } else {
             roundResult.textContent = "It's a tie! You both selected Scissors!";
         }
@@ -51,7 +55,9 @@ function playRound(e) {
         `Game over! You lose! You: ${playerScore} Computer: ${computerScore}`
         playerScore = 0;
         computerScore = 0;
-        scores.textContent = `Scores: You: ${playerScore} Computer: ${computerScore}`
+        scores.textContent = `You: ${playerScore} Computer: ${computerScore}`
+        displayComputerSelection.textContent = "❔"
+        displayPlayerSelection.textContent = "❔"
     }
 }
 

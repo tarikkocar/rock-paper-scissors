@@ -5,18 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300&display=swap');
+    </style>
     <script src="rockPaperScissors.js" defer></script>
 </head>
 <body>
-    <div class = "scores">
-        Scores: You: 0 Computer: 0
+    <div class = "header">
+        <h1>Rock Paper Scissors</h1>
+        <div class = "scores">
+            You: 0 Computer: 0
+        </div>
     </div>
-    <div>
-        <button class = "btn">Rock</button>
-        <button class = "btn">Paper</button>
-        <button class = "btn">Scissors</button>
+    <div class="round-result">
+        <ul>
+            <li class="computer-selection">❔</li>
+            <li class="player-selection">❔</li>
+        </ul>
+    </div>
+    <div class = "buttons">
+        <button class = "btn">🪨</button>
+        <button class = "btn">📜</button>
+        <button class = "btn">✂️</button>
     </div>
     <div class = "result">
+
     </div>
 </body>
 </html>
